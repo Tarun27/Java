@@ -17,6 +17,7 @@ public class stack{
     node.next = head;
     head = node;
   }
+   size++;
  }
   
 public int pop(){
@@ -26,6 +27,7 @@ public int pop(){
   }
   int val = head.val;
   head=head.next;
+    size--;
   return val;
   }catch(Exception e){
     e.printStackTrace();
@@ -34,6 +36,10 @@ public int pop(){
 
 public int peak(){
 return head.val;
+}
+  
+public int size(){
+return size;
 }
 
 }
