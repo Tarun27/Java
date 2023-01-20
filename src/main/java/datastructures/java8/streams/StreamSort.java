@@ -1,3 +1,5 @@
+package learning.streams;
+
 import java.util.*;
 import  java.util.stream.*;
 
@@ -11,7 +13,7 @@ class Person{
     }
     
 }
-public class MyClass {
+public class StreamSort {
   
     public static void main(String args[]) {
  List<Integer> integerList = Arrays.asList(1, 4, 3, 4, 5);
@@ -37,7 +39,7 @@ public class MyClass {
         new Person2(3000, "Third", 35, 25000));
    
   // compareTo works with Integer/Long classes but not  with primitive types like int
-  personList.stream().sorted((p1, p2) -> ((Long)p1.getPersonId()).compareTo(p2.getPersonId()))
+   personList.stream().sorted((o1, o2) -> ((Long)o1.getPersonId()).compareTo(o2.getPersonId()))
         .forEach(person -> System.out.println(person.getName()));   
       
       
@@ -52,7 +54,7 @@ public class MyClass {
   
 }
 
-public class Person2 {
+class Person2 {
     private long personId;
     private String name;
     private int age;
@@ -98,4 +100,3 @@ public class Person2 {
         this.salary = salary;
     }
 }
-
