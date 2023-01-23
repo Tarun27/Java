@@ -1,0 +1,16 @@
+import java.util.*;
+import java.util.stream.*;
+public class MyClass {
+    public static void main(String args[]) {
+     List<Integer> list = List.of(1,4,7,5,3,8,6,9);
+     
+     //skip 1st no, print 2nd and 3rd numbers greater than 5
+     list.stream().filter(n->n>5)
+     .skip(1)
+     .limit(2)
+     .forEach(no->System.out.println(no));
+     
+     int res = list.stream().max((x,y)->Integer.compare(x,y)).get();
+     System.out.println(res);
+    }
+}
