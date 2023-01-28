@@ -19,6 +19,10 @@ int[] arr = list2.stream().mapToInt(Integer::intValue).toArray();
         // Returns the value of this Integer as an int
         int i = intobject.intValue();
 
+     List<Integer> listWithDuplicates = Lists.newArrayList(5, 0, 3, 1, 2, 3, 0, 0);
+    List<Integer> listWithoutDuplicates = listWithDuplicates.stream()
+     .distinct()
+     .collect(Collectors.toList());
 
 }
   
