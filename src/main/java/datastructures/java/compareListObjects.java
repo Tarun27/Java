@@ -9,9 +9,7 @@ public class User {
     public boolean equals(Object o) {
 
         if (o == this) return true;
-        if (!(o instanceof User)) {
-            return false;
-        }
+    if (o == null || getClass() != o.getClass()) return false;
 
         User user = (User) o;
 
