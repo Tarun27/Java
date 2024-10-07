@@ -110,6 +110,12 @@ public class DijkstraWithPathTrace {
 
 /*
 
+
+Shortest distance calculation: O((V + E) log V)
+Shortest path tracing for all vertices: O(V^2) in the worst case (if you trace paths for all vertices).
+
+In the worst case, the graph is dense (i.e., nearly complete), and the number of edges can be up to E = O(V^2)
+
 Shortest distances from source 0:
 Vertex 0 -> Distance: 0
 Vertex 1 -> Distance: 7
