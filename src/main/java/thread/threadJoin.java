@@ -22,4 +22,22 @@ class MyThread extends Thread {
 
         System.out.println("Both threads have finished. Main thread is resuming.");
     }
+
+/**
+ * Explanation of Example:
+ * Two threads, thread1 and thread2, are started.
+ * The main thread (which runs the main() method) calls join() on both thread1 and thread2.
+ * This causes the main thread to wait until both threads complete their execution before printing "Both threads have finished.
+ *  Main thread is resuming."
+ * If join() is not used, the main thread might finish and print its message before the other threads complete their execution.
+ *
+ * Key Points:
+ *
+ * Without join(), the main thread may complete its execution and exit before the other threads finish, depending on how the thread scheduler schedules the threads.
+ * With join(), the main thread will block and wait for other threads to finish, ensuring that all threads complete before moving on.
+ * The join() method can also be used to specify a timeout, so the calling thread does not wait indefinitely if the target thread takes too long to finish.
+ *
+ */
+    
 }
+
