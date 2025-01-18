@@ -4,6 +4,15 @@ class MyThread extends Thread {
             System.out.println("Thread " + Thread.currentThread().getId() + " is starting.");
             Thread.sleep(1000);  // Simulate some work by sleeping for 1 second
             System.out.println("Thread " + Thread.currentThread().getId() + " is finished.");
+
+            long startTime = System.currentTimeMillis();
+            System.out.println("Thread " + Thread.currentThread().getId() + " started at " + startTime);
+            Thread.sleep(1000);  // Simulate some work
+            long endTime = System.currentTimeMillis();
+            System.out.println("Thread " + Thread.currentThread().getId() + " finished at " + endTime);
+            System.out.println("Thread " + Thread.currentThread().getId() + " took " + (endTime - startTime) + " milliseconds.");
+
+            
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
