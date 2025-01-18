@@ -26,8 +26,8 @@ class MyThread extends Thread {
         thread2.start();
 
         // Main thread will wait for thread1 and thread2 to finish
-        thread1.join();
-        thread2.join();
+        thread1.join(); //  Main thread waits for thread1 to finish
+        thread2.join(); // // After thread1 finishes, main thread waits for thread2 to finish
 
         System.out.println("Both threads have finished. Main thread is resuming.");
     }
