@@ -1,3 +1,15 @@
+
+/*
+
+Encapsulation – Data hiding via private variables and access methods.
+Inheritance – Extending a class to inherit its behavior.
+Polymorphism – Overriding methods in a subclass.
+Abstraction – Using abstract classes to define common behavior.
+
+*/
+
+
+
 // Abstraction - Abstract class
 abstract class Animal {
     // Encapsulation - private fields with getter and setter methods
