@@ -2,6 +2,9 @@ package com.tarun;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
+//Ideal for scenarios where reads dominate writes, as writes (e.g., add/remove) create a new copy, which can be resource-intensive.
+
+
 public class copyOnWriteArrayListEx {
     public static void main(String[] args) {
 
