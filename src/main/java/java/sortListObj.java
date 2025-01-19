@@ -7,6 +7,8 @@ ObjectList.stream().distinct().collect(Collectors.toList());
 // If you can not or don't want to override the equals method, you can filter the stream in the following way for any property,
 //e.g. for the property Name (the same for the property Id etc.):
 
+//removes duplicates from a list of Employee objects based on their name field.
+
 Set<String> nameSet = new HashSet<>();
 List<Employee> employeesDistinctByName = employees.stream()
             .filter(e -> nameSet.add(e.getName()))
@@ -29,7 +31,7 @@ public class MyClass {
     List<Employee> employees = Arrays.asList(e1, e2, e3, e4);
     Set<Integer> idSet = new HashSet<>();
 
-// checks if a unique field  is duplicate
+// checks if a unique field  is duplicate and prints unique names
     employees.stream().filter(e -> idSet.add(e.id)).forEach(emp->System.out.println(emp.name));     
      employees.stream().filter(e -> idSet.add(e.id)).collect(Collectors.toList());
      
