@@ -2,6 +2,11 @@ package com.tarun;
 
 
 abstract class Animal {
+    
+    Animal(){
+        System.out.println("Abstract class Animal created.");
+    }
+    
     abstract void makeSound();
 
     void move() {
