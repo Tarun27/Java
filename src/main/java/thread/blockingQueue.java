@@ -1,5 +1,10 @@
 /*
 
+A blocking queue is a thread-safe queue that blocks a thread trying to enqueue if the queue is full 
+or dequeue if the queue is empty, until the operation can proceed. 
+
+It uses mechanisms like wait()/notify() or advanced concurrency utilities.
+
 Key Points:
 
 Blocking Operations: The enqueue and dequeue methods use wait() and notifyAll() to block and unblock threads, respectively, 
@@ -10,6 +15,8 @@ Producer-Consumer: A producer thread adds items to the queue, while a consumer t
 Behavior:
 If the queue is full, the producer thread waits until there is space.
 If the queue is empty, the consumer thread waits until an item is available.
+
+
 
 */
 
