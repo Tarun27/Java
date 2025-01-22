@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.stream.*;
 
 
-public class functionalInterface {
+public class FunctionalInterface {
     public static void main(String args[]) {
         // Creating predicate
         Predicate<Integer> lesserthan = i -> (i < 18);
