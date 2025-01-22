@@ -5,7 +5,7 @@ package com.tarun;
 import java.util.*;
 import java.util.Map.Entry;
 
-public class tmp {
+public class Tmp {
 
     public tmp() {
 
