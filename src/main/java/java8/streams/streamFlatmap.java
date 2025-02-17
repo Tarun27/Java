@@ -1,3 +1,15 @@
+
+        List<String> list1 = Arrays.asList("Apple", "Banana", "Cherry");
+        List<String> list2 = Arrays.asList("Date", "Elderberry", "Fig");
+        List<String> list3 = Arrays.asList("Grape", "Honeydew", "Indian Fig");
+
+        // Merging the lists using flatMap with a lambda expression
+        List<String> mergedList = Stream.of(list1, list2, list3)
+                                        .flatMap(list -> list.stream())  // Using lambda instead of method reference
+                                        .collect(Collectors.toList());  // Collecting the result into a list
+
+
+
         // Creating a list of Prime Numbers
         List<Integer> PrimeNumbers = Arrays.asList(5, 7, 11,13);
           
@@ -24,8 +36,24 @@
           String[][] array = new String[][]{{"a", "b"}, {"c", "d"}, {"e", "f"}};
 
   List<String> collect = Stream.of(array)     // Stream<String[]>
-          .flatMap(Stream::of)                // Stream<String>
+          .flatMap(Stream::of)                // Stream<String>    ->  .flatMap(s -> Stream.of(s))
           .filter(x -> !"a".equals(x))        // filter out the a
           .collect(Collectors.toList());      // return a List
 
-  collect.forEach(System.out::println);                                                 
+  collect.forEach(System.out::println);       
+
+
+
+
+        String[][] array = new String[][]{{"a", "b"}, {"c", "d"}, {"e", "f"}};
+
+        // Flattening the 2D array into a 1D array using flatMap and a lambda expression
+        String[] flattenedArray = Arrays.stream(array)        // Stream of String arrays
+                                        .flatMap(arr -> Arrays.stream(arr))  // Flattening each array into a stream of strings using a lambda
+                                        .toArray(len -> new String[len]);  // Collecting into a new 1D array using a lambda
+
+        // Printing the flattened array
+        System.out.println(Arrays.toString(flattenedArray));
+
+
+
