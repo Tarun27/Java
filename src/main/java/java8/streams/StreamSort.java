@@ -27,7 +27,13 @@ public class StreamSort {
  Person p3 = new Person(8,"c");
 
  List<Person> p =  List.of(p1,p2,p3);
- 
+
+/* 
+The .sorted() method in Java Streams is an intermediate operation that returns a new stream with elements sorted according
+to their natural order (e.g., numerically for numbers, lexicographically for strings)  or a custom comparator.
+
+*/    
+        
   List<Person> pList = p.stream().sorted((o1,o2)->(o1.age- o2.age)).collect(Collectors.toList());
   
   pList.stream().forEach(person->System.out.println(person.age+" "+ person.address));
@@ -43,13 +49,16 @@ public class StreamSort {
         .forEach(person -> System.out.println(person.getName()));   
       
       
-   // below 3 methods are less imp, just for knowledge   
-   personList.stream().sorted(Comparator.comparingLong(Person2::getPersonId)).forEach(person -> System.out.println(person.getName()));   
+   // below 3 methods are less imp, just for knowledge    // (p) -> p.getPersonId()   
+   personList.stream().sorted(Comparator.comparingLong(Person2::getPersonId)).forEach(person -> System.out.println(person.getName()));
    
    personList.stream().sorted(Comparator.comparing(Person2::getPersonId)).forEach(person -> System.out.println(person.getName()));
       
    personList.stream().sorted(Comparator.comparing(Person2::getPersonId).thenComparing(Person2::getAge)).forEach(person -> System.out.println(person.getName())); //Sorting by person id and then by age.
-      
+
+        // Comparator.comparing() sorts by the natural order of the values.
+        // people.sort(Comparator.comparing( (p) -> p.getPersonId(), Comparator.reverseOrder())); // using custom comparator. 
+
     }
   
 }
