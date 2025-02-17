@@ -10,7 +10,7 @@ public class MyClass {
      .limit(2)
      .forEach(no->System.out.println(no));
      
-     int res = list.stream().max((x,y)->Integer.compare(x,y)).get();
+     int res = list.stream().max((x,y)->Integer.compare(x,y)).get();  // max() returns  Optional<Integer>
      System.out.println(res);
      
      
@@ -24,9 +24,11 @@ public class MyClass {
          Person p3 = new Person("n3",8,"c");
         
         List<Person> p =  List.of(p1,p2,p3);
+
+// .map() is an intermediate operation that transforms each element of the stream using a given function.
         
            p.stream().map(psn-> psn.name)
-          .forEach(name->System.out.println(name));
+          .forEach(name->System.out.println(name)); // or we can collect them.
           
           
           // another way of writing stream
