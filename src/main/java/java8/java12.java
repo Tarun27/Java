@@ -81,5 +81,20 @@ public class SwitchExpressionExample {
 
             System.out.println(noType); // Outputs: Large number: 7
 
+
+
+
+        // Java 21 introduced pattern matching for switch, which allows checking conditions inside case using when
+
+        int num = 15;
+
+        switch (num) {
+            case int n when n < 20 -> System.out.println("n is " + n + ", less than 20");
+            case int n when n >= 20 -> System.out.println("n is " + n + ", 20 or greater");
+            default -> System.out.println("Unknown");
+        }
+
+        
+
     }
 }
