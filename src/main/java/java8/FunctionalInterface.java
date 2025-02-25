@@ -115,6 +115,11 @@ public class FunctionalInterface {
         // Print first 5 random numbers
         randomStream.limit(5).forEach(System.out::println);
 
+     //   Example 2: Finite Stream (Java 9+)
+
+       Stream.iterate(1, n -> n <= 10, n -> n + 2)
+        .forEach(System.out::println);
+
         /*
 
          Stream.generate(new Random()::nextInt)
