@@ -39,7 +39,8 @@
           .flatMap(Stream::of)                // Stream<String>    ->  .flatMap(s -> Stream.of(s))
           .filter(x -> !"a".equals(x))        // filter out the a
           .collect(Collectors.toList());      // return a List
-
+                        // .toList() -> no need for collect here, 
+                        //Starting in Java 16, you can use toList() directly on a Stream, which is shorter and more readable:
   collect.forEach(System.out::println);       
 
 
