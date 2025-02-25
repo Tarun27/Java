@@ -13,6 +13,12 @@ public static void main(String args[]){
         list.stream().mapToInt(num -> Integer.parseInt(num))
                      .filter(num -> num % 3 == 0)
                      .forEach(System.out::println);  
+
+// reduce example
+            int sum = numbers.stream()
+                         .reduce(0, (a, b) -> a + b);
+        
+        System.out.println("Sum: " + sum); // Output: Sum: 15
     
       //convert list of Integers to primitive int array
     
@@ -65,6 +71,11 @@ System.out.println(duplicates); // [1, 4]
  //   convert primitive array to stream
         
 
+    /*
+    Primitive streams (e.g., IntStream) are optimized for performance when dealing with raw numbers, but they’re limited 
+    in functionality compared to Stream<T>. For example, you can’t directly use methods like collect(Collectors.toList()) 
+    on an IntStream because it doesn’t deal with objects. boxed() bridges that gap by wrapping each primitive into its object type.
+    */
        
     
 }
