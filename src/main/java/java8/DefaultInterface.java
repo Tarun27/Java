@@ -36,6 +36,9 @@ public class C1 implements Alarm, I1 ,I2 {
   
     @Override
   public String getGreeting(){
+
+   // The super keyword here isn’t about a superclass—it’s a special construct in Java (introduced with default methods in Java 8) 
+   // to refer to an interface’s default method when you’re in a class that implements it.
       return I1.super.getGreeting() +  I2.super.getGreeting();
   }
   
