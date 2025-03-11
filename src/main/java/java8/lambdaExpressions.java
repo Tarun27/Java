@@ -47,13 +47,6 @@ public class LambdaFeatures {
         System.out.println("Product: " + multiply.apply(3, 7));
 
 
-        // Lambda implementation of the Producer interface
-        Producer<String> stringProducer = () -> "Hello, Lambda Producer!";
-
-        // Invoking the produce() method to get the produced value
-        String result = stringProducer.produce();
-        System.out.println(result);  // Outputs: Hello, Lambda Producer!
-
         // 6. Using Lambda with Functional Interfaces
         Predicate<Integer> isEven = num -> num % 2 == 0;
         System.out.println("Is 8 even? " + isEven.test(8));
